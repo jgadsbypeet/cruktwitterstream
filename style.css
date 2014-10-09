@@ -1,0 +1,21 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@font-face {
+    font-family: 'MuseoSans700';
+    src: url('MuseoSansRounded-700.otf');
+}
+
+@font-face {
+    font-family: 'MuseoSans300';
+    src: url('MuseoSansRounded-300.otf');
+}
+
+body {background-color: #fff;}
+.tweet_box {background-color: #fff; padding: 20px; border-radius: 5px; position:relative; margin-top: 10%; border:1px solid #e3e3e3; min-height: 300px;}
+.banner img {margin-top: 20px;}
+.banner hgroup {position: relative; margin-left: 430px; margin-top: -80px;}
+h1 {font-family: 'MuseoSans700'; color: #2e008b;}
+h2 {font-family: 'MuseoSans300'; color: #333;}
+a {color: #e40085;}
+.profile_picture {width: 250px; height: 250px; float: right;}
