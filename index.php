@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Twitter Stream trial</title>
+<title>Twitter Stream alpha</title>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 <link href="style.css" rel="stylesheet">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -12,6 +12,7 @@
 </head>
 
 <body>
+<?php $search_term = "@CRUK"; ?>
 <div class="container">
 	<div class="row-fluid banner">
 		<img src="http://www.cancerresearchuk.org/sites/all/themes/custom/cruk/logo.png" alt="Home">
@@ -20,11 +21,12 @@
         </hgroup>
 	</div>
     <div class="row-fluid">        
+    <h2 class="search_term">Searching for <span class="pink"><?php echo $search_term ?></span></h2>
 <?php 
 include_once "oauth-jgp.php";
 // lets run a search.
 $bearer_token = get_bearer_token(); // get the bearer token
-$results = search_for_a_term($bearer_token, "Cancer Research UK"); //  search for the work 'XXX'
+$results = search_for_a_term($bearer_token, $search_term); //  search for the work 'XXX'
 invalidate_bearer_token($bearer_token); // invalidate the token
 
 $response = json_decode($results, true);

@@ -19,3 +19,5 @@ h1 {font-family: 'MuseoSans700'; color: #2e008b;}
 h2 {font-family: 'MuseoSans300'; color: #333;}
 a {color: #e40085;}
 .profile_picture {width: 250px; height: 250px; float: right;}
+.search_term {margin-top: 60px; margin-bottom: -60px; color: #2e008b;}
+.pink {color: #e40085;}
