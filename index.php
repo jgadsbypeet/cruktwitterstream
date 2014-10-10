@@ -30,7 +30,7 @@ $results = search_for_a_term($bearer_token, $search_term); //  search for the wo
 invalidate_bearer_token($bearer_token); // invalidate the token
 
 $response = json_decode($results, true);
-$rand_no = rand(0,14);
+$rand_no = rand(0,5);
 $image_url = $response[statuses][$rand_no][user][profile_image_url];
 $image_url_bigger=str_replace("_normal","",$image_url);
 
