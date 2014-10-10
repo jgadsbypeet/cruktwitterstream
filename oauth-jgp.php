@@ -11,8 +11,8 @@
 
 
 // fill in your consumer key and consumer secret below
-define('CONSUMER_KEY', 'ZhqHb8gUgNTLcCQJc4NrMIewn');
-define('CONSUMER_SECRET', 'ncskbWTgsYjE8alDLF55rawyZwoAN57gkWTncZAvTMP6TtoKZT');
+define('CONSUMER_KEY', 'AqSi7bDoBdD9bEbOm0yGWk8dm');
+define('CONSUMER_SECRET', 'EnKGqOp0VWE83tDhIG8cYkLEgU3EXTfsPAAPTvuVQX5XHmt2vC');
 /**
 *	Get the Bearer Token, this is an implementation of steps 1&2
 *	from https://dev.twitter.com/docs/auth/application-only-auth
@@ -102,12 +102,12 @@ function invalidate_bearer_token($bearer_token){
 * Basic Search of the Search API
 * Based on https://dev.twitter.com/docs/api/1.1/get/search/tweets
 */
-function search_for_a_term($bearer_token, $query, $result_type='mixed', $count='5'){
+function search_for_a_term($bearer_token, $query, $result_type='mixed', $count='15'){
 	$url = "https://api.twitter.com/1.1/search/tweets.json"; // base url
 	$q = urlencode(trim($query)); // query term
 	$formed_url ='?q='.$q; // fully formed url
 	if($result_type!='mixed'){$formed_url = $formed_url.'&result_type='.$result_type;} // result type - mixed(default), recent, popular
-	if($count!='5'){$formed_url = $formed_url.'&count='.$count;} // results per page - defaulted to 15
+	if($count!='15'){$formed_url = $formed_url.'&count='.$count;} // results per page - defaulted to 15
 	$formed_url = $formed_url.'&include_entities=true'; // makes sure the entities are included, note @mentions are not included see documentation
 	$headers = array( 
 		"GET /1.1/search/tweets.json".$formed_url." HTTP/1.1", 

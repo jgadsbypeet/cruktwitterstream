@@ -12,7 +12,7 @@
 </head>
 
 <body>
-<?php $search_term = "@CRUK"; ?>
+<?php $search_term = "Cancer Research UK"; ?>
 <div class="container">
 	<div class="row-fluid banner">
 		<img src="http://www.cancerresearchuk.org/sites/all/themes/custom/cruk/logo.png" alt="Home">
@@ -30,7 +30,7 @@ $results = search_for_a_term($bearer_token, $search_term); //  search for the wo
 invalidate_bearer_token($bearer_token); // invalidate the token
 
 $response = json_decode($results, true);
-$rand_no = rand(0,5);
+$rand_no = rand(1,14);
 $image_url = $response[statuses][$rand_no][user][profile_image_url];
 $image_url_bigger=str_replace("_normal","",$image_url);
 
@@ -53,7 +53,6 @@ echo "<p>";
 print_r($response[statuses][$rand_no][created_at]);
 echo "</p>";
 echo "</div>";
-
 ?>
 
 </div>
